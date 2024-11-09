@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import AstroI from "../../public/astro.png";
+import ReactI from "../../public/react.png";
+---
+
+<div class="bg-cyan-100">
+  <div
+    class="p-10"
+    data-aos="fade-right"
+    data-aos-duration="1000"
+    data-aos-anchor-placement="center-bottom"
+  >
+    <p class="font-bold text-4xl">Tecnology Used:</p>
+  </div>
+  <div class="flex flex-col gap-4 pb-20">
+    <div class="flex flex-row gap-4 items-center justify-center px-5">
+      <div
+        class="flex flex-col items-center justify-center gap-4"
+        data-aos="fade-right"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="center-bottom"
+      >
+        <Image src={AstroI} alt="astrojs" height={150} width={150} />
+        <p class="text-xl font-medium">Astro.js</p>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center gap-4"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-anchor-placement="center-bottom"
+      >
+        <Image src={ReactI} alt="astrojs" height={150} width={150} />
+        <p class="text-xl font-medium">React.js</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4 px-8 mt-10">
+      <p class="font-bold md:text-4xl text-lg">References :</p>
+      <a
+        class="text-xl hover:text-white transition-colors duration-300"
+        href="https://vann.my.id">vann.my.id</a
+      >
+      <p class="text-xl">
+        Image by <a
+          href="https://pngtree.com"
+          class="hover:text-white transition-colors duration-300">Pngtree</a
+        >
+      </p>
+    </div>
+  </div>
+  <footer class="flex flex-col items-center justify-center gap-4 mx-auto pb-40">
+    <p class="justify-center">
+      Website Licensed Under GNU GPLv3. Modification is possible while copyright
+      and license notices must be preserved.
+    </p>
+    <p>Copyright © 2024 KangBaso</p>
+  </footer>
+</div>

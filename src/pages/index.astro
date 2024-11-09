@@ -1,16 +1,58 @@
 ---
-
+import "@fontsource-variable/fredoka";
+import Navbar from "../layouts/Navbar.astro";
+import HeroSection from "../layouts/HeroSection.astro";
+import { Image } from "astro:assets";
+import Pohon from "../../public/pohon.png";
+import ProjectSection from "../layouts/ProjectSection.astro";
+import AboutSection from "../layouts/AboutSection.astro";
+import SmoothScroll from "../libs/SmoothScroll";
+import CreditSection from "../layouts/CreditSection.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Homepage | Devv</title>
+  </head>
+  <style>
+    body {
+      font-family: "Fredoka Variable", sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <body
+    class="relative overflow-x-hidden from-white to-gray-300 bg-gradient-to-b"
+  >
+    <SmoothScroll client:load>
+      <Navbar />
+      <HeroSection />
+      <div class="relative">
+        <Image
+          src={Pohon}
+          class="absolute z-0 -top-64 left-80"
+          height={400}
+          width={400}
+          alt="ini pohon"
+        />
+      </div>
+      <ProjectSection />
+      <AboutSection />
+      <CreditSection />
+      <button
+        class="fixed bottom-5 right-5 bg-black text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:bg-slate-600 duration-300 ease-in-out shadow-slate-500 focus:outline-none"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
+        aria-label="Back to Top"
+        data-aos="fade-up"
+        data-aos-anchor="#project"
+      >
+        ↑
+      </button>
+    </SmoothScroll>
+  </body>
 </html>

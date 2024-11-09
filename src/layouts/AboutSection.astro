@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import Lampu from "../../public/v2.png";
+---
+
+<div>
+  <div
+    id="about"
+    class="grid grid-cols-2 gap-4 items-center justify-between mb-20 px-8"
+  >
+    <div
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      data-aos-anchor-placement="center-bottom"
+    >
+      <h1 class="font-bold text-4xl">Little bit about me.</h1>
+      <p class="pt-5 text-xl">
+        I'm a Web Developer but im very confuse when it comes to UI/UX. in
+        discord i go by the name of KangBaso. I love learning new things and
+        building cool projects. Feel free to reach out if you want to
+        collaborate or just say hi!
+      </p>
+    </div>
+    <div
+      class="pl-10 z-0 -mb-10"
+      id="lampu"
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-anchor-placement="bottom-bottom"
+    >
+      <Image src={Lampu} alt="lampu" />
+    </div>
+  </div>
+  <div class="z-40 -mt-60">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+      ><path
+        fill="#CFFAFE"
+        fill-opacity="1"
+        d="M0,256L48,261.3C96,267,192,277,288,250.7C384,224,480,160,576,112C672,64,768,32,864,37.3C960,43,1056,85,1152,96C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path></svg
+    >
+  </div>
+</div>

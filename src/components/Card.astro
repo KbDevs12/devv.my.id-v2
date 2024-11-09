@@ -1,0 +1,13 @@
+---
+const { title, content } = Astro.props;
+---
+
+<div class=`bg-lime-400 rounded-2xl hover:-translate-y-2 transition-transforms duration-300`>
+    <div class="p-4">
+        <div class="text-2xl p-4">
+            <slot/>
+        </div>
+        <h1 class="font-semibold text-xl -mt-2 pb-2">{title}</h1>
+        <p>{content}</p>
+    </div>
+</div>
