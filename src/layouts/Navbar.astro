@@ -2,13 +2,33 @@
 import { Github, Instagram } from "lucide-astro";
 ---
 
+<style>
+  #menu-mobile {
+    z-index: 70;
+  }
+
+  #menu-toggle {
+    z-index: 999;
+  }
+</style>
+
 <nav
   class="flex m-4 items-center justify-between"
   data-aos="fade-down"
   data-aos-duration="1000"
 >
   <p class="text-xl font-semibold pl-4 cursor-pointer">Aditya Putra</p>
-  <div class="flex bg-lime-400 p-4 rounded-full border-4 border-slate-300">
+  <button
+    id="menu-toggle"
+    class="md:hidden fixed top-0 right-0 p-2 rounded bg-lime-400"
+    aria-label="Open Menu"
+  >
+    Menu
+  </button>
+  <div
+    id="menu"
+    class="hidden md:flex bg-lime-400 p-4 rounded-full border-4 border-slate-300"
+  >
     <ul class="flex flex-row items-center justify-center gap-4">
       <li
         class="hover:bg-lime-700 hover:text-white rounded-full p-1 px-3 transition-colors duration-300"
@@ -27,7 +47,7 @@ import { Github, Instagram } from "lucide-astro";
       </li>
     </ul>
   </div>
-  <div class="flex flex-row gap-4 mb-2 pr-4">
+  <div class="hidden md:flex flex-row gap-4 mb-2 pr-4">
     <a
       href="https://github.com/KbDevs12"
       class="hover:text-lime-700 transition-colors duration-300"><Github /></a
@@ -39,3 +59,79 @@ import { Github, Instagram } from "lucide-astro";
     >
   </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<nav
+  id="menu-mobile"
+  class="fixed inset-0 pt-52 hidden flex-col items-center justify-center bg-lime-400"
+>
+  <button
+    id="menu-close"
+    class="absolute top-4 right-4 bg-gray-800 text-white py-2 px-4 rounded"
+  >
+    X
+  </button>
+  <ul class="flex flex-col items-center gap-8">
+    <li>
+      <a
+        href="#home"
+        class="text-2xl text-gray-800 hover:text-white transition-colors duration-300"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href="#project"
+        class="text-2xl text-gray-800 hover:text-white transition-colors duration-300"
+        >Project</a
+      >
+    </li>
+    <li>
+      <a
+        href="#about"
+        class="text-2xl text-gray-800 hover:text-white transition-colors duration-300"
+        >About</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuMobile = document.getElementById("menu-mobile");
+  const menuClose = document.getElementById("menu-close");
+  const menuLinks = menuMobile.querySelectorAll("a");
+
+  let isMenuOpen = false;
+
+  function openMenu() {
+    if (!isMenuOpen) {
+      isMenuOpen = true;
+      menuMobile.classList.remove("hidden");
+      menuMobile.classList.add("animate__fadeIn", "animate__animated");
+      menuMobile.classList.remove("animate__fadeOut");
+    }
+  }
+
+  function closeMenu() {
+    if (isMenuOpen) {
+      isMenuOpen = false;
+      menuMobile.classList.add("animate__fadeOut", "animate__animated");
+      setTimeout(() => {
+        menuMobile.classList.add("hidden");
+        menuMobile.classList.remove("animate__fadeIn");
+      }, 500);
+    }
+  }
+
+  menuToggle.addEventListener("click", openMenu);
+  menuClose.addEventListener("click", closeMenu);
+  menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+  document.addEventListener("click", (e) => {
+    const target = e.target as Node;
+    if (isMenuOpen && !menuMobile.contains(target) && target !== menuToggle) {
+      closeMenu();
+    }
+  });
+</script>

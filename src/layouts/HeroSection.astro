@@ -4,29 +4,41 @@ import { FileTerminal, TrendingUp, Handshake } from "lucide-astro";
 ---
 
 <div class="relative">
-  <div class="grid grid-cols-2 items-center justify-between">
+  <!-- Hero Section Grid -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-10"
+  >
+    <!-- Left Section -->
     <div
-      class="pl-20 nomor"
+      class="pl-10 md:pt-0 pt-10 md:pl-20 nomor"
       data-aos="fade-right"
       data-aos-delay="200"
       data-aos-duration="1000"
     >
-      <p class="text-2xl font-medium pl-7">Hi everyone, My name is</p>
-      <span class="font-bold text-9xl mb-10">Aditya<br />Putra</span><br />
+      <p class="text-xl sm:text-2xl font-medium">Hi everyone, My name is</p>
+      <span class="font-bold text-6xl md:text-4xl mb-10 block"
+        >Aditya<br />Putra</span
+      ><br />
+
+      <!-- Button -->
       <div
-        class="mt-10 ml-14 p-4 bg-green-800 inline-block rounded-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
+        class="mt-10 ml-0 md:ml-14 p-4 bg-green-800 inline-block rounded-full hover:-translate-y-2 transition-transform duration-300 cursor-pointer"
       >
         <a href="#about" class="text-white">Who I am?</a>
       </div>
     </div>
 
+    <!-- Right Section (Cards) -->
     <div
-      class="grid grid-rows-2 gap-2 pt-5"
+      class="grid grid-rows-2 gap-4 px-4 md:pl-0 pt-5"
       data-aos="fade-down"
       data-aos-duration="1500"
       data-aos-anchor=".nomor"
     >
-      <div class="flex flex-row items-center justify-center gap-4 pr-6">
+      <!-- First Row of Cards -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-center gap-4 md:pr-6"
+      >
         <Card
           title="Proficient In Javascript"
           content="Experienced in developing JavaScript-based applications, with a strong grasp of fundamentals and modern frameworks."
@@ -40,7 +52,9 @@ import { FileTerminal, TrendingUp, Handshake } from "lucide-astro";
           <TrendingUp size="30" />
         </Card>
       </div>
-      <div class="mx-20 mt-2">
+
+      <!-- Second Row of Card -->
+      <div class="mx-0 md:mx-20 mt-2">
         <Card
           title="Reliable"
           content="Recognized as a reliable individual in various situations, both in task completion and team collaboration. Consistent and professional, upholding integrity and responsibility in all work endeavors."

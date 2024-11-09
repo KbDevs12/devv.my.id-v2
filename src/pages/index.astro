@@ -8,12 +8,17 @@ import ProjectSection from "../layouts/ProjectSection.astro";
 import AboutSection from "../layouts/AboutSection.astro";
 import SmoothScroll from "../libs/SmoothScroll";
 import CreditSection from "../layouts/CreditSection.astro";
+import Cloud from "../components/Cloud";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Homepage | Devv</title>
@@ -35,12 +40,13 @@ import CreditSection from "../layouts/CreditSection.astro";
       <div class="relative">
         <Image
           src={Pohon}
-          class="absolute z-0 -top-64 left-80"
+          class="absolute z-0 -top-60 md:-top-64 md:left-80 -left-32"
           height={400}
           width={400}
           alt="ini pohon"
         />
       </div>
+      <Cloud client:load />
       <ProjectSection />
       <AboutSection />
       <CreditSection />

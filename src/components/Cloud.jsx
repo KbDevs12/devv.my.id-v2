@@ -34,16 +34,16 @@ export default function Cloud() {
   }, []);
 
   return (
-    <div ref={ctn} className="relative w-screen mt-2 z-10">
+    <div ref={ctn} className="relative w-screen z-10">
       <img
-        className="cloud absolute"
+        className="cloud absolute md:top-0 -top-32"
         src="/awan-1.png"
         alt="Cloud"
         width={150}
         height={100}
       />
       <img
-        className="cloud absolute w-96 h-52 top-24"
+        className="cloud absolute w-96 h-52 -top-10 md:top-24"
         src="/awan-2.png"
         alt="Cloud"
         width={100}
